@@ -23,13 +23,15 @@ const Home = () => {
       xl:pt-8 xl:pb-24">
         {/* text */}
         <div className="text-center xl:text-left order-2 xl:order-none">
-          <span className="text-xl">software Developer</span>
+          <span className="text-xl">Python Developer</span>
           <h1 className="h1 mb-6">
-            Halo I'm <br /> <span className="text-accent">Pavithran Arul</span>
+            Hola Amigos!<br /> <span className="text-accent">Pavithran Arul</span>
           </h1>
-          <p className="max-w-[500px] mb-9 text-white/80">
-            I excel at crafting elegant digital experience and iam 
-            proficient in various programming language and technologies.
+          <p className="max-w-[650px] mb-9 text-white/80">
+            Python developer focused on building intelligent and scalable backend systems. 
+          With expertise in FastAPI, AI model integration, and automation workflows, 
+          I love turning complex ideas into clean, efficient, and meaningful digital solutions — 
+          especially data-driven applications.
           </p>
           {/* btn and social */}
           <div className="flex flex-col xl:flex-row items-center gap-8 ">

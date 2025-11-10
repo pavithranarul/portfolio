@@ -6,26 +6,40 @@ import Link from 'next/link';
 const services = [
     {
         num: '01',
-        title: 'Web Development',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        title: 'Python Backend Development',
+        description: 'Design and build scalable, high-performance backend systems using FastAPI and async architecture — optimized for reliability, clarity, and speed.',
         href: "",
     },
     {
         num: '02',
-        title: 'IOT',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        title: 'AI Model Integration',
+        description: 'Seamlessly integrate large language models (Gemini, GPT, etc.) into production APIs with real-time inference, data validation, and contextual workflows.',
         href: "",
     },
     {
         num: '03',
-        title: 'Java FullStack',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        title: 'Automation Workflows',
+        description: 'Automate complex business and healthcare processes with intelligent pipelines that blend AI, data engineering, and event-driven automation.',
         href: "",
     },
     {
         num: '04',
-        title: 'Flutter/Native App Development',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        title: 'Flutte/Android App Development',
+        description: 'Develop and connect mobile apps with backend services, enabling smooth real-time data exchange, WebSocket communication, and secure API flows.',
+        href: "",
+    },
+    {
+        num: '05',
+        title: 'Healthcare AI Systems',
+        description:
+            'Create domain-specific healthcare automation solutions — from structured transcription to medication dosage and risk assessment engines.',
+        href: "",
+    },
+    {
+        num: '06',
+        title: 'Data Engineering & Analytics',
+        description:
+            'Leverage DuckDB, Pandas, and GCS to design efficient, queryable data layers for AI-driven insights and large-scale batch processing.',
         href: "",
     },
 ];
