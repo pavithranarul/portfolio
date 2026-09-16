@@ -415,6 +415,10 @@ main > section > div { min-width: 0; }
 .project-card { width: 100%; min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 22px; background: var(--surface); }
 .project-thumbnail { --preview-color: #ff9c84; position: relative; isolation: isolate; aspect-ratio: 16 / 10; padding: 24px 30px 0; overflow: hidden; color: #f5f3f8; background: radial-gradient(ellipse at 80% 90%, #87452f 0%, transparent 65%), #231a21; }
 .project-thumbnail::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .3; background-image: radial-gradient(#ffffff40 .7px, transparent .7px); background-size: 18px 18px; mask-image: linear-gradient(120deg, transparent, black); }
+.preview-tracker.project-thumbnail { --preview-color: #f5c46b; background: radial-gradient(ellipse at 85% 85%, #7a5520, transparent 70%), #262015; }
+.preview-sync.project-thumbnail { --preview-color: #8fd3ff; background: radial-gradient(ellipse at 85% 85%, #1f5a77, transparent 70%), #122430; }
+.preview-ecg.project-thumbnail { --preview-color: #ff8a9a; background: radial-gradient(ellipse at 85% 85%, #7d2a3a, transparent 70%), #26151b; }
+.preview-chat.project-thumbnail { --preview-color: #9be38f; background: radial-gradient(ellipse at 85% 85%, #2f6a35, transparent 70%), #15251a; }
 .preview-workspace.project-thumbnail { --preview-color: #85e1d1; background: radial-gradient(ellipse at 85% 85%, #235f62, transparent 70%), #11262d; }
 .preview-documents.project-thumbnail { --preview-color: #c3adff; background: radial-gradient(ellipse at 85% 85%, #5a4087, transparent 70%), #211c38; }
 .preview-voice.project-thumbnail { --preview-color: #9ac8ff; background: radial-gradient(ellipse at 85% 85%, #2c5185, transparent 70%), #182337; }
@@ -437,6 +441,20 @@ main > section > div { min-width: 0; }
 .preview-records > div > svg, .preview-records > div > span:last-child { color: var(--preview-color); }
 .preview-window .preview-document-flow { min-height: 106px; padding: 20px 12px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--preview-color); }
 .preview-document-flow > span { padding: 12px 10px; border: 1px solid #c3adff33; border-radius: 8px; background: #c3adff0a; font-size: 10px; white-space: nowrap; }
+.preview-board { min-height: 106px; padding: 14px 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: start; }
+.preview-board > div { display: grid; gap: 6px; }
+.preview-board > div > span { color: var(--preview-color); font-size: 8px; white-space: nowrap; }
+.preview-board i { padding: 7px 8px; border: 1px solid #f5c46b2e; border-radius: 6px; background: #f5c46b0d; color: #e5dfe9; font-size: 8px; font-style: normal; }
+.preview-sync { min-height: 106px; padding: 20px 14px; display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--preview-color); font-size: 10px; }
+.preview-sync > span { display: flex; align-items: center; gap: 6px; padding: 10px; border: 1px solid #8fd3ff33; border-radius: 8px; background: #8fd3ff0a; white-space: nowrap; }
+.preview-sync > i { color: #d3dce7; font-style: normal; font-size: 9px; white-space: nowrap; }
+.preview-ecg { min-height: 106px; padding: 14px 18px; display: grid; gap: 8px; }
+.preview-ecg svg { width: 100%; height: 64px; }
+.preview-ecg polyline { fill: none; stroke: var(--preview-color); stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.preview-ecg > span { color: #d3dce7; font-size: 9px; }
+.preview-chat { min-height: 106px; padding: 14px 18px; display: grid; gap: 8px; align-content: start; }
+.preview-chat > span { width: fit-content; max-width: 80%; padding: 6px 10px; border-radius: 10px 10px 10px 2px; background: #ffffff12; color: #e5dfe9; font-size: 9px; }
+.preview-chat > span.is-own { justify-self: end; border-radius: 10px 10px 2px 10px; background: #9be38f26; color: var(--preview-color); }
 .preview-wave { height: 110px; display: flex; justify-content: center; align-items: center; gap: 6px; padding-inline: 24px; }
 .preview-wave i { width: 5px; border-radius: 6px; background: var(--preview-color); opacity: .85; }
 .project-details { flex: 1; padding: 28px; display: flex; flex-direction: column; }

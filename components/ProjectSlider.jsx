@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, FileText, ShieldCheck, UsersRound, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, HeartPulse, KanbanSquare, Laptop, MessagesSquare, Smartphone, FileText, ShieldCheck, UsersRound, UserRound } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
@@ -10,6 +10,10 @@ import BrandBadge from "@/components/BrandBadge";
 import "swiper/css";
 
 const covers = {
+  sync: { icon: Smartphone, name: "Connectivity", caption: "Your clipboard, on every device.", label: "Cross-device sync" },
+  ecg: { icon: HeartPulse, name: "ECG detection", caption: "From an ECG image to a report.", label: "Medical imaging" },
+  chat: { icon: MessagesSquare, name: "Octagram", caption: "Chat with anyone by username.", label: "Android chat app" },
+  tracker: { icon: KanbanSquare, name: "TrackFlow", caption: "Issues that follow the workflow.", label: "Issue tracker" },
   reliability: { icon: ShieldCheck, name: "Failo", caption: "Keep the conversation going.", label: "LLM reliability" },
   documents: { icon: FileText, name: "FluidAI", caption: "From a request to a Word document.", label: "Document automation" },
   voice: { icon: AudioLines, name: "Dinodial", caption: "Voice calls for restaurant bookings.", label: "Restaurant voice agent" },
@@ -24,9 +28,17 @@ function ProjectThumbnail({ type }) {
       <div className="preview-topline"><span className="preview-symbol"><Icon size={20} /></span><span>{label}</span></div>
       <div className="preview-brand"><strong>{name}</strong><span>{caption}</span></div>
       <div className="preview-window">
-        <div className="preview-window-bar"><i /><i /><i /><span>{type === "reliability" ? "request.py" : "workspace"}</span></div>
+        <div className="preview-window-bar"><i /><i /><i /><span>{{ reliability: "request.py", tracker: "board", sync: "devices", ecg: "report", chat: "chat" }[type] ?? "workspace"}</span></div>
         {type === "reliability" ? (
           <div className="preview-code"><span><b>request</b> → LLM provider</span><span className="preview-dim">↳ timeout · retry with backoff</span><span className="preview-success">↳ fallback · response received</span></div>
+        ) : type === "sync" ? (
+          <div className="preview-sync"><span><Laptop size={16} /> macOS</span><i>⇄ clipboard</i><span><Smartphone size={16} /> Phone</span></div>
+        ) : type === "ecg" ? (
+          <div className="preview-ecg"><svg viewBox="0 0 240 70" preserveAspectRatio="none"><polyline points="0,40 40,40 50,34 58,40 78,40 84,48 92,8 100,58 108,40 130,40 142,30 154,40 190,40 196,48 204,12 212,56 220,40 240,40" /></svg><span>Prediction · normal</span></div>
+        ) : type === "chat" ? (
+          <div className="preview-chat"><span>Hey, are you free today?</span><span className="is-own">Yes, call me at 5</span><span>Sounds good 👍</span></div>
+        ) : type === "tracker" ? (
+          <div className="preview-board">{[["To Do", ["TF-12", "TF-15"]], ["In Progress", ["TF-9"]], ["Done", ["TF-4", "TF-7"]]].map(([column, cards]) => <div key={column}><span>{column}</span>{cards.map((card) => <i key={card}>{card}</i>)}</div>)}</div>
         ) : type === "workspace" ? (
           <div className="preview-records">{["Create", "View", "Update"].map((action, i) => <div key={action}><UserRound size={14} /><span>Record 0{i + 1}</span><span>{action}</span></div>)}</div>
         ) : type === "documents" ? (

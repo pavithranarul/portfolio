@@ -24,6 +24,15 @@ import {
   SiSpringboot,
   SiGooglegemini,
   SiPytest,
+  SiDjango,
+  SiTypescript,
+  SiTensorflow,
+  SiFlask,
+  SiFlutter,
+  SiSwift,
+  SiKotlin,
+  SiFirebase,
+  SiAndroid,
 } from "react-icons/si";
 
 const brands = {
@@ -55,6 +64,16 @@ const brands = {
   "scikit-learn": { icon: SiScikitlearn, color: "#F7931E" },
   "Spring Boot": { icon: SiSpringboot, color: "#6DB33F" },
   pytest: { icon: SiPytest, color: "#0A9EDC" },
+  Django: { icon: SiDjango, color: "#44B78B" },
+  TypeScript: { icon: SiTypescript, color: "#3178C6" },
+  TensorFlow: { icon: SiTensorflow, color: "#FF6F00" },
+  Flask: { icon: SiFlask, color: "var(--text)" },
+  Flutter: { icon: SiFlutter, color: "#02569B" },
+  Swift: { icon: SiSwift, color: "#F05138" },
+  Kotlin: { icon: SiKotlin, color: "#7F52FF" },
+  Firebase: { icon: SiFirebase, color: "#FFCA28" },
+  Android: { icon: SiAndroid, color: "#3DDC84" },
+  WebSockets: { icon: SiWebrtc, color: "#1A73E8" },
 };
 
 export default function BrandBadge({ name, compact = false }) {
